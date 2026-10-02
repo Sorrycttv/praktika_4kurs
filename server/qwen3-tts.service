@@ -1,0 +1,18 @@
+[Unit]
+Description=Qwen3-TTS API
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=sorry
+WorkingDirectory=/home/sorry/qwen3-tts
+Environment=HF_HOME=/home/sorry/qwen3-tts/hf-cache
+Environment=OMP_NUM_THREADS=2
+Environment=MKL_NUM_THREADS=2
+ExecStart=/home/sorry/qwen3-tts/.venv/bin/python -m uvicorn tts_api:app --host 127.0.0.1 --port 8020
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
