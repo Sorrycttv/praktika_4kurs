@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-02",
+  "scenario": "Real GPU API through external SSH connection; browser simulated call",
+  "text": "Здравствуйте, Мария! Это компания Трайтэк. Баланс вашего лицевого счёта составляет восемьсот двадцать рублей. Спасибо!",
+  "http_status": 200,
+  "request_seconds": 8.067685800000001,
+  "audio_seconds": 9.04,
+  "server_generation_header": "5.928",
+  "playback_started": true,
+  "scope": "Browser button to full HTTP response; includes network and UI; one run, no warmup. No actual telephone call."
+}

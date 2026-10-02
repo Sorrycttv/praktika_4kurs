@@ -1,0 +1,56 @@
+[Qwen] qwentts.cpp unknown (unknown)
+[GGML] ggml_vulkan: Found 1 Vulkan devices:
+[GGML] ggml_vulkan: 0 = AMD Radeon RX 580 2048SP (RADV POLARIS10) (radv) | uma: 0 | fp16: 0 | bf16: 0 | fp4: 0 | warp size: 64 | shared memory: 65536 | int dot: 0 | matrix cores: none
+[Load] Talker backend: Vulkan0 (CPU threads: 3)
+[GGUF] /work/models/qwen-talker-1.7b-voicedesign-Q8_0.gguf: 404 tensors, data at offset 5949344
+[WeightCtx] Loaded 316 tensors, 1765.0 MB into backend
+[Talker] Loaded: 28 layers, hidden 2048, heads 16/8, head_dim 128, FFN 6144, RoPE theta 1000000, mrope sections [24,20,20] interleaved=0
+[WeightCtx] Loaded 88 tensors, 177.5 MB into backend
+[CodePredictor] Loaded: 5 layers, hidden 1024, heads 16/8, head_dim 128, FFN 3072, RoPE theta 1000000, 15 acoustic codebooks (vocab 2048 each), mtp_proj linear
+[GGUF] /work/models/qwen-tokenizer-12hz-Q8_0.gguf: 398 tensors, data at offset 29760
+[WeightCtx] Loaded 18 tensors, 33.0 MB into backend
+[Quantizer] Loaded: 16 codebooks (1 semantic + 15 acoustic), 2048 entries x 256 dim, hidden 512
+[WeightCtx] Loaded 93 tensors, 30.9 MB into backend
+[Transformer] Loaded: 8 layers, hidden 512, heads 16/16, head_dim 64, FFN 1024, RoPE theta 10000, sliding window 72
+[WeightCtx] Loaded 22 tensors, 33.1 MB into backend
+[Upsample] Loaded: 2 blocks (2x ratio per block), channels 1024, dwconv kernel 7
+[WeightCtx] Loaded 118 tensors, 142.9 MB into backend
+[DAC] Loaded: 4 blocks (strides 8/5/4/3), 24 kHz mono out, weights 142.9 MB
+[WeightCtx] Loaded 2 tensors, 3.0 MB into backend
+[Pipeline] Ready: hop 1920 samples @ 24000 Hz mono, 16 codebooks @ 12.5 Hz
+[KVCache] Allocated: 28 layers, 8 KV heads, head_dim 128, max_seq_len 4096, 1 sets -> 896 MB
+[KVCache] Allocated: 5 layers, 8 KV heads, head_dim 128, max_seq_len 16, 1 sets -> 0 MB
+[Pipeline] Loaded: arch=1b7 variant=voice_design tokenizer=qwen3_tts_tokenizer_12hz codebooks=16 speaker_encoder=absent speakers=0 fa=off clamp_fp16=off max_batch=1
+[BPE] Loaded from GGUF: 151676 vocab, 151291 merges, eos_id=151643
+[BPE] Registered 5 arch special tokens (total specials=6)
+[Qwen] Compute worker started (max_batch=1)
+[Prompt] Built: 53 ids, N_text=45, N_instruct=33, T_ctx=88, hidden=2048, lang=Russian (id=2069), speaker=none (id=-1) ref_spk_emb=no icl=no
+[Batch] Admit slot=0 T_ctx=88 prefill=775.4 ms build=24.2 ms (stall for 0 active slots)
+[Sample] step=0 c0=1700 u=0.6129598618 subseq=0
+[Sample] step=1 c0=1700 u=0.7741796374 subseq=16
+[Pipeline] Generated 8 frames (slot 0)
+[Pipeline] Generated 16 frames (slot 0)
+[Pipeline] Generated 24 frames (slot 0)
+[Pipeline] Generated 32 frames (slot 0)
+[Pipeline] Generated 40 frames (slot 0)
+[Pipeline] Generated 48 frames (slot 0)
+[Pipeline] Generated 56 frames (slot 0)
+[Pipeline] Generated 64 frames (slot 0)
+[Pipeline] Generated 72 frames (slot 0)
+[Pipeline] Generated 80 frames (slot 0)
+[Pipeline] Generated 88 frames (slot 0)
+[Pipeline] Generated 96 frames (slot 0)
+[Pipeline] Generated 104 frames (slot 0)
+[Pipeline] Generated 112 frames (slot 0)
+[Pipeline] EOS at step 112, stopping (slot 0)
+[Pipeline] Generation done : 112 frames
+[Perf] PromptBuild 24.2 ms
+[Perf] Prefill 775.4 ms (T_ctx prefill)
+[Perf] TTFA 1153.3 ms (first frame codes)
+[Perf] TalkerDecode 2431.4 ms (112 frames, 21.71 ms/frame)
+[Perf] CodePredictor 2658.0 ms (23.73 ms/frame)
+[Perf] HostCompose 7.5 ms (c0 sample + next emb)
+[Perf] CodecDecode 755.7 ms
+[Perf] Total 6653.8 ms (112 frames, 45.51 ms/frame AR, audio 8.96 s, RTF 0.743)
+[WAV] Wrote /work/results/gpu_comparison_20261001_130611/GPU_no_FA_2.wav: 215040 samples, 24000 Hz, mono S16
+[Pipeline] Wrote 215040 samples (8.96 s) -> /work/results/gpu_comparison_20261001_130611/GPU_no_FA_2.wav

@@ -1,0 +1,27 @@
+{
+  "series": [
+    {
+      "threads": 2,
+      "mean_api_seconds": 41.15290258599756,
+      "mean_rtf": 4.384025589556435,
+      "runs": 3,
+      "folder": "baseline_2threads_20261001_121040"
+    },
+    {
+      "threads": 4,
+      "mean_api_seconds": 39.06408835404242,
+      "mean_rtf": 4.295867708580538,
+      "runs": 3,
+      "folder": "test_4threads_20261001_124406"
+    }
+  ],
+  "api_time_reduction_percent": 5.075739742998997,
+  "rtf_reduction_percent": 2.0108888320794938,
+  "limitations": [
+    "Three measured runs per configuration after warmup",
+    "Speech duration varies because generation is stochastic",
+    "API latency includes synthesis and WAV serialization",
+    "RAM, energy and GPU load were not measured",
+    "CPU experiment; RX580 is not used by current TTS API"
+  ]
+}

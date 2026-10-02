@@ -1,0 +1,11 @@
+{
+  "bytes": 433964,
+  "audio_seconds": 9.04,
+  "http_seconds": 7.5191710999934,
+  "http_status": 200,
+  "sha256": "6f1279979460bf6636e31b38123364293049f50b94dd937dfa8107b78049f309",
+  "rate": 24000,
+  "channels": 1,
+  "sample_bytes": 2,
+  "frames": 216960
+}

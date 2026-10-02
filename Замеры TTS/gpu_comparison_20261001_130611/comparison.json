@@ -1,0 +1,20 @@
+{
+  "CPU": {
+    "synthesis_seconds": 23.42663333333333,
+    "wall_seconds": 26.006008775982384,
+    "audio_seconds": 8.64,
+    "rtf": 2.711415895061728
+  },
+  "GPU_no_FA": {
+    "synthesis_seconds": 6.652733333333334,
+    "wall_seconds": 8.554888039594516,
+    "audio_seconds": 8.96,
+    "rtf": 0.7424925595238095
+  },
+  "GPU_FA": {
+    "synthesis_seconds": 5.2391000000000005,
+    "wall_seconds": 6.9504504149857285,
+    "audio_seconds": 8.8,
+    "rtf": 0.5953522727272728
+  }
+}

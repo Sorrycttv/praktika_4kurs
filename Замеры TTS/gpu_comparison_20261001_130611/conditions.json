@@ -1,0 +1,12 @@
+{
+  "text": "Здравствуйте, Мария! Это компания Трайтэк. Баланс вашего лицевого счёта составляет восемьсот двадцать рублей. Спасибо!",
+  "prompt": "An adult woman with a calm, warm, friendly voice. Clear natural Russian pronunciation. Moderate pace, no whispering, no exaggerated acting.",
+  "seed": 42,
+  "model": "qwen-talker-1.7b-voicedesign-Q8_0.gguf",
+  "codec": "qwen-tokenizer-12hz-Q8_0.gguf",
+  "cpu_limit": 4,
+  "memory_limit": "6g",
+  "max_new": 600,
+  "runtime_commit": "4eb8c7d7609dbd47ad461ba90611234e0c9858bc",
+  "timing_scope": "Wall: container startup, model loading, generation, WAV; synthesis: runtime Perf Total"
+}
