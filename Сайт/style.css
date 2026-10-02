@@ -1,0 +1,375 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0b1220;
+  color: #edf2fa;
+  font: 16px/1.5 Arial, sans-serif;
+}
+
+header {
+  padding: 32px 24px;
+  background: #111c30;
+  border-bottom: 1px solid #283650;
+}
+
+header h1,
+header p {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+header p {
+  margin-top: 8px;
+  color: #aab6c8;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 1000px;
+  margin: 28px auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 24px;
+  background: #151f32;
+  border: 1px solid #2a3851;
+  border-radius: 14px;
+}
+
+h2,
+.contact-form h3 {
+  margin-top: 0;
+  color: #f4f6fa;
+}
+
+.contact-form {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.contact-form h3 {
+  margin-bottom: 0;
+}
+
+.contact-form label {
+  display: grid;
+  gap: 5px;
+  color: #c1cbda;
+}
+
+.contact-form input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #34445f;
+  border-radius: 8px;
+  background: #0e1728;
+  color: #edf2fa;
+  font: inherit;
+}
+
+.contact-form input::placeholder {
+  color: #8290a5;
+}
+
+button {
+  padding: 12px 18px;
+  border: 1px solid #ff9b45;
+  border-radius: 8px;
+  background: #ff9b45;
+  color: #1a1b20;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #ffb36b;
+  border-color: #ffb36b;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.subscriber-list {
+  display: grid;
+  gap: 10px;
+}
+
+button.subscriber {
+  width: 100%;
+  background: #1b2940;
+  border-color: #34445f;
+  color: #edf2fa;
+  text-align: left;
+}
+
+button.subscriber:hover {
+  background: #263650;
+  border-color: #ff9b45;
+}
+
+button.subscriber.selected {
+  background: #3b2c24;
+  border-color: #ff9b45;
+}
+
+#status {
+  color: #ffb36b;
+}
+
+@media (max-width: 700px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}   
+.selection-hint {
+  margin: -8px 0 16px;
+  color: #aab6c8;
+  font-size: 14px;
+}
+
+.selection-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.selection-controls .clear-selection {
+  background: transparent;
+  border-color: #52617a;
+  color: #edf2fa;
+}
+
+.selection-controls .clear-selection:hover {
+  background: #263650;
+  border-color: #ff9b45;
+}
+
+.selection-controls .delete-positive {
+  background: #482832;
+  border-color: #a84d50;
+  color: #ffe5e5;
+}
+
+.selection-controls .delete-positive:hover:not(:disabled) {
+  background: #63323a;
+  border-color: #d66a61;
+}
+
+.selection-controls .clear-list {
+  background: transparent;
+  border-color: #a84d50;
+  color: #ffd7d7;
+}
+
+.selection-controls .clear-list:hover:not(:disabled) {
+  background: #482832;
+  border-color: #d66a61;
+}
+
+.template-editor {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.template-editor label {
+  color: #c1cbda;
+}
+
+.template-editor textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px;
+  border: 1px solid #34445f;
+  border-radius: 8px;
+  background: #0e1728;
+  color: #edf2fa;
+  font: inherit;
+  resize: vertical;
+}
+
+.template-editor textarea:focus {
+  border-color: #ff9b45;
+  outline: 2px solid #ff9b4533;
+}
+
+.template-editor small {
+  color: #aab6c8;
+}
+
+.review-panel {
+  margin: 18px 0;
+  padding: 16px;
+  border: 1px solid #34445f;
+  border-radius: 10px;
+  background: #101a2b;
+}
+
+.review-panel h3 {
+  margin: 0 0 8px;
+  color: #f4f6fa;
+}
+
+#review-summary {
+  margin: 0 0 12px;
+  color: #c1cbda;
+}
+
+.review-list {
+  display: grid;
+  gap: 10px;
+}
+
+.review-card {
+  padding: 12px;
+  border: 1px solid #34445f;
+  border-radius: 8px;
+  background: #151f32;
+}
+
+.review-card.ready {
+  border-left: 4px solid #48b887;
+}
+
+.review-card.needs-fix {
+  border-left: 4px solid #d66a61;
+}
+
+.review-card h4,
+.review-card p {
+  margin: 0 0 6px;
+}
+
+.review-card h4 {
+  color: #f4f6fa;
+}
+
+.review-phone {
+  color: #c1cbda;
+}
+
+.review-text {
+  color: #edf2fa;
+}
+
+.review-result {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ready-text {
+  color: #73d5a8;
+}
+
+.error-text {
+  color: #ff9b91;
+}
+
+button.subscriber {
+  display: grid;
+  gap: 4px;
+}
+
+.subscriber-name {
+  color: #fff;
+  font-size: 16px;
+}
+
+.subscriber-detail {
+  color: #c1cbda;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.subscriber-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: stretch;
+  gap: 8px;
+}
+
+.subscriber-entry .edit-subscriber {
+  align-self: start;
+  padding: 9px 12px;
+  background: transparent;
+  border-color: #52617a;
+  color: #edf2fa;
+}
+
+.subscriber-entry .edit-subscriber:hover {
+  background: #263650;
+  border-color: #ff9b45;
+}
+
+#cancel-edit {
+  background: transparent;
+  border-color: #52617a;
+  color: #edf2fa;
+}
+
+#cancel-edit:hover {
+  background: #263650;
+}
+
+.client-search {
+  display: grid;
+  gap: 6px;
+  margin: 18px 0 8px;
+  color: #c1cbda;
+}
+
+.client-search input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #34445f;
+  border-radius: 8px;
+  background: #0e1728;
+  color: #edf2fa;
+  font: inherit;
+}
+
+.client-search input:focus {
+  border-color: #ff9b45;
+  outline: 2px solid #ff9b4533;
+}
+
+.client-search small,
+.empty-list {
+  color: #aab6c8;
+}
+
+.empty-list {
+  margin: 8px 0;
+}
+
+.selection-controls .export-list {
+  background: #263650;
+  border-color: #52617a;
+  color: #edf2fa;
+}
+
+.selection-controls .export-list:hover:not(:disabled) {
+  background: #34445f;
+  border-color: #ff9b45;
+}
+
+#test-call { margin-top: 16px; width: 100%; }
+#call-dialog { width: min(520px, calc(100% - 32px)); padding: 28px; border: 1px solid #ff9b45; border-radius: 14px; background: #151f32; color: #edf2fa; }
+#call-dialog::backdrop { background: #050a14cc; }
+#call-client { color: #ffb36b; }
+#call-audio { width: 100%; margin: 12px 0; }
+.call-controls { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+#end-call { background: transparent; color: #edf2fa; border-color: #52617a; }
+
+#test-call + .selection-hint { margin: 12px 0 0; }

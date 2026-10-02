@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Голосовые уведомления</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Голосовые уведомления</h1>
+    <p>Учебное приложение для подготовки сообщений абонентам</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Тестовые абоненты</h2>
+      <p class="selection-hint">Нажимайте на карточки, чтобы выбрать одного или нескольких клиентов.</p>
+        <form id="add-form" class="contact-form">
+  <h3>Добавить абонента</h3>
+
+  <label>
+    ФИО
+    <input name="name" required>
+  </label>
+  <label>
+    Адрес
+    <input name="address" required>
+  </label>
+
+  <label>
+    Лицевой счёт
+    <input name="account" required>
+  </label>
+
+  <label>
+    Телефон
+    <input name="phone" type="tel" placeholder="+79991234567" required>
+  </label>
+
+  <label>
+    Баланс, ₽
+    <input name="balance" type="number" step="0.01"
+           min="-9999999" max="9999999" required>
+  </label>
+
+  <button type="submit">Добавить в список</button>
+  <button id="cancel-edit" class="clear-selection" type="button" hidden>Отменить редактирование</button>
+</form>
+<div class="csv-import">
+  <label for="csv-file">Загрузить базу абонентов из CSV</label>
+  <input id="csv-file" type="file" accept=".csv,text/csv">
+  <small>Столбцы: name, address, account, phone, balance (address можно не указывать)</small>
+</div>
+       <div class="client-search">
+  <label for="client-search">Найти клиента</label>
+  <input id="client-search" type="search" placeholder="ФИО, адрес, счёт, телефон или баланс">
+  <small id="client-count">Показано: 0 из 0. Выбрано: 0.</small>
+</div><div class="selection-controls">
+  <button id="select-all" type="button">Выбрать всех</button>
+  <button id="clear-selection" class="clear-selection" type="button" disabled>Снять выделение</button>
+  <button id="delete-positive" class="delete-positive" type="button">Удалить всех с положительным балансом</button>
+  <button id="clear-list" class="clear-list" type="button">Очистить список</button>
+  <button id="export-list" class="export-list" type="button">Скачать всю базу CSV</button>
+</div><div class="subscriber-list" id="subscriber-list"></div>
+    </section>
+
+    <section>
+      <h2>Текст уведомления</h2>
+      <div class="template-editor">
+        <label for="message-template">Шаблон сообщения</label>
+        <textarea id="message-template" rows="5"></textarea>
+        <small>Переменные: {name} — ФИО, {address} — адрес, {account} — счёт, {balance} — баланс.</small>
+      </div>
+      <h3>Предпросмотр для выбранных абонентов</h3>
+      <p id="message">Сначала выберите абонента.</p>
+      <div class="review-panel">
+        <h3>Проверка перед отправкой</h3>
+        <p id="review-summary">Выберите клиентов — здесь появятся их телефоны и персональные сообщения.</p>
+        <div id="review-list" class="review-list"></div>
+      </div><button id="start-demo" type="button" disabled>
+  Запустить демонстрацию для выбранных
+</button>
+<p id="status" aria-live="polite"></p>
+<div id="audio-results"></div>
+<button id="test-call" type="button" disabled>Тестовый звонок · имитация</button>
+<p class="selection-hint">Для теста выберите одного абонента. Вызов и ответ имитируются в браузере; реальный номер не набирается.</p>
+<dialog id="call-dialog" aria-labelledby="call-title">
+  <h2 id="call-title">Тестовый звонок</h2>
+  <p id="call-client"></p>
+  <p id="call-state" aria-live="polite"></p>
+  <audio id="call-audio" controls hidden></audio>
+  <div class="call-controls">
+    <button id="answer-call" type="button" disabled>Ответить</button>
+    <button id="end-call" type="button">Отменить</button>
+  </div>
+</dialog>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
